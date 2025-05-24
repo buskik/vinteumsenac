@@ -29,8 +29,7 @@ public class PrimaryController {
             resultado.setText(jogo.resultado());
             return;
         }
-        jogo.distribuirCartaParaJogador(jogo.jogador);
-        jogo.distribuirCartaParaJogador(jogo.computador);
+
         jogo.computador.parar();
         if (jogo.getJogador().parou) {
             jogo.distribuirCartaParaJogador(jogo.computador);
@@ -39,6 +38,9 @@ public class PrimaryController {
             }
             atualizar();
             turno();
+        } else {
+            jogo.distribuirCartaParaJogador(jogo.jogador);
+            jogo.distribuirCartaParaJogador(jogo.computador);
         }
         atualizar();
         if (jogo.acabou()) {
